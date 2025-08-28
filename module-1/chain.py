@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from typing import Annotated
 from typing_extensions import TypedDict
 from langgraph.graph.message import add_messages
-from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage,AIMessage
+from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, START, END
 import os
@@ -41,7 +41,9 @@ inital_prompt = [
     HumanMessage(content="I'm looking for information on marine biology"),
 ]
 
-new_message = AIMessage(content="Sure, I can help with that. What specifically are you interested in?")
+new_message = AIMessage(
+    content="Sure, I can help with that. What specifically are you interested in?"
+)
 
 add_messages(inital_prompt, new_message)
 
